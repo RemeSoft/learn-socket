@@ -9,9 +9,9 @@ const io = new Server(expressServer);
 io.on('connection', function(socket){
     console.log("New User Connected");
 
-    socket.on("disconnect", (reason) => {
-        console.log("user Disconnected");
-    });
+    setTimeout(function (){
+        socket.send("Data comes form server side");
+    }, 5000);
 });
 
 app.get('/',function (req, res){
